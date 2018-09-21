@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha Tests</title>
+    <link rel="stylesheet" href="/modules/mocha/mocha.css">
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="/modules/mocha/mocha.js"></script>
+    <script src="/modules/chai/chai.js"></script>
+    <script>mocha.setup('bdd')</script>
+
+   <script>
+    <!-- load code you want to test here -->
+    var assert = chai.assert, expect = chai.expect, should = chai.should();
+
+describe('Array', function() {
+  it('should start empty', function() {
+    var arr = [];
+
+    assert.equal(arr.length, 0);
+  });
+});
+
+function isFilled(str) {
+  if (str.length > 0){
+    return true;
+  };
+  return false;
+};
+
+
+describe("Cell Filled", function() {
+    it("Should return false if not filled", function() {
+      //var isFilled = isFilled('');
+        isFilled('jjjjj').should.equal(false);
+    });
+});
+</script>
+
+    <!-- load your test files here -->
+
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
